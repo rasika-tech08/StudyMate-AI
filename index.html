@@ -1,1 +1,76 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudyMate AI — an AI-powered study companion for smarter and easier learning.">
+  <title>StudyMate AI | Learn smarter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div><strong>StudyMate</strong><small>AI study companion</small></div>
+      </div>
+      <nav class="main-nav">
+        <p class="nav-label">Workspace</p>
+        <a class="nav-link active" href="#dashboard" data-view="dashboard"><span>⌂</span> Overview</a>
+        <a class="nav-link" href="#assistant" data-view="assistant"><span>✦</span> AI Assistant</a>
+        <a class="nav-link" href="#notes" data-view="notes"><span>▤</span> Quick Notes</a>
+        <a class="nav-link" href="#quiz" data-view="quiz"><span>✓</span> Practice Quiz</a>
+        <a class="nav-link" href="#progress" data-view="progress"><span>◔</span> My Progress</a>
+        <a class="nav-link" href="#tools" data-view="tools"><span>◇</span> Study Tools</a>
+        <p class="nav-label nav-label-spaced">Your space</p>
+        <a class="nav-link" href="#chat" data-view="chat"><span>◌</span> Ask AI</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="upgrade-card"><span class="sparkle">✦</span><strong>Make today count</strong><p>Small steps add up to big progress.</p><button class="text-button" data-view-target="progress">View progress <span>→</span></button></div>
+        <button class="profile"><span class="avatar">AS</span><span><b>Alex Student</b><small>Personal workspace</small></span><span class="more">•••</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="pageName">Overview</strong></div>
+        <div class="top-actions">
+          <label class="search-box" aria-label="Search topics"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search topics..." autocomplete="off"><kbd>⌘ K</kbd></label>
+          <button class="icon-button" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">☾</button>
+          <button class="notification" aria-label="Notifications">♢<i></i></button>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="view active-view" id="dashboard" data-title="Overview">
+          <div class="welcome-row"><div><p class="eyebrow">SUNDAY, SEPTEMBER 13, 2026</p><h1>Good morning, Alex <span class="wave">✦</span></h1><p class="muted">Ready to turn curiosity into progress?</p></div><div class="streak-chip"><span>♨</span><div><b id="streakValue">7 day streak</b><small>Keep it going!</small></div></div></div>
+          <div class="hero-card"><div class="hero-copy"><span class="pill purple">✦ AI-POWERED LEARNING</span><h2>What do you want to<br><em>learn today?</em></h2><p>Ask a question, explore a topic, or test your knowledge. Your personal study companion is ready.</p><form class="hero-search" id="heroForm"><input id="heroTopic" aria-label="Topic to learn" placeholder="e.g. Explain binary trees in simple terms"><button type="submit">Start learning <span>→</span></button></form><div class="suggestions"><span>Try:</span><button type="button" data-topic="Artificial Intelligence">Artificial Intelligence</button><button type="button" data-topic="Python">Python</button><button type="button" data-topic="DBMS">DBMS</button></div></div><div class="hero-visual" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="visual-card"><span class="sparkle big">✦</span><b>Learn with clarity.</b><small>One concept at a time.</small></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div></div></div>
+          <div class="section-heading"><div><p class="eyebrow">JUMP BACK IN</p><h2>Quick actions</h2></div><button class="link-button" data-view-target="assistant">View all <span>→</span></button></div>
+          <div class="quick-grid"><button class="quick-card accent-purple" data-view-target="assistant"><span class="card-icon">✦</span><span><b>Explain a topic</b><small>Break down complex ideas</small></span><i>→</i></button><button class="quick-card accent-yellow" data-view-target="notes"><span class="card-icon">▤</span><span><b>Generate notes</b><small>Get revision-ready notes</small></span><i>→</i></button><button class="quick-card accent-green" data-view-target="quiz"><span class="card-icon">✓</span><span><b>Practice quiz</b><small>Test your understanding</small></span><i>→</i></button><button class="quick-card accent-blue" data-view-target="chat"><span class="card-icon">◌</span><span><b>Ask AI</b><small>Get unstuck, faster</small></span><i>→</i></button></div>
+          <div class="dashboard-grid"><div class="panel recent-panel"><div class="panel-heading"><div><p class="eyebrow">YOUR ACTIVITY</p><h2>Recent topics</h2></div><button class="icon-button subtle" aria-label="More recent topics">•••</button></div><div id="recentTopics" class="topic-list"></div></div><div class="panel goal-panel"><div class="panel-heading"><div><p class="eyebrow">DAILY GOAL</p><h2>Keep building momentum</h2></div><span class="goal-count">4/5</span></div><p class="muted">You've completed 4 of 5 study activities today.</p><div class="progress-track large"><span style="width:80%"></span></div><div class="goal-footer"><span>80% complete</span><button class="link-button" data-view-target="progress">See insights →</button></div></div></div>
+          <div class="stats-grid"><div class="stat-card"><span class="stat-icon purple-bg">◉</span><small>TOPICS STUDIED</small><strong id="topicsStudied">12</strong><em class="up">↗ 18% <span>vs last week</span></em></div><div class="stat-card"><span class="stat-icon green-bg">✓</span><small>QUIZZES COMPLETED</small><strong id="quizzesCompleted">8</strong><em class="up">↗ 2 <span>this week</span></em></div><div class="stat-card"><span class="stat-icon yellow-bg">★</span><small>AVERAGE QUIZ SCORE</small><strong id="averageScore">82%</strong><em class="up">↗ 6% <span>vs last week</span></em></div><div class="stat-card"><span class="stat-icon blue-bg">♨</span><small>LEARNING STREAK</small><strong id="statStreak">7 days</strong><em class="neutral">Personal best: 12 days</em></div></div>
+        </section>
+
+        <section class="view" id="assistant" data-title="AI Assistant"><div class="view-header"><div><p class="eyebrow">STUDY COMPANION</p><h1>AI Study Assistant</h1><p class="muted">Turn confusing topics into clear, memorable explanations.</p></div><span class="demo-badge">DEMO MODE · NO API REQUIRED</span></div><div class="assistant-layout"><div class="panel prompt-panel"><div class="assistant-intro"><span class="ai-avatar">✦</span><div><h3>What would you like to understand?</h3><p>I'll explain it simply, highlight the essentials, and give you a real-world connection.</p></div></div><label for="assistantInput">Your topic or question</label><textarea id="assistantInput" rows="5" placeholder="e.g. Explain binary trees in simple terms"></textarea><div class="form-actions"><button class="primary-button" id="explainBtn">Explain topic <span>→</span></button><div class="example-chips"><button data-assistant-topic="Artificial Intelligence">AI</button><button data-assistant-topic="Machine Learning">Machine Learning</button><button data-assistant-topic="Data Structures">Data Structures</button></div></div></div><div class="panel response-panel" id="assistantResponse"><div class="empty-state"><span class="empty-icon">✧</span><h3>Your explanation will appear here</h3><p>Choose a suggested topic or ask anything you’re studying.</p></div></div></div></section>
+
+        <section class="view" id="notes" data-title="Quick Notes"><div class="view-header"><div><p class="eyebrow">REVISION TOOLKIT</p><h1>Quick Notes</h1><p class="muted">Create compact, exam-ready notes in seconds.</p></div></div><div class="notes-layout"><div class="panel notes-form"><label for="notesInput">Topic</label><div class="input-with-button"><input id="notesInput" placeholder="e.g. Python functions"><button class="primary-button" id="generateNotesBtn">Generate</button></div><div class="note-tip"><span>✦</span><p><b>Study tip</b><br>Great notes are short, structured, and written in your own words.</p></div></div><div class="panel generated-notes" id="generatedNotes"><div class="empty-state"><span class="empty-icon">▤</span><h3>Your quick notes are ready when you are</h3><p>Enter a topic to generate a focused revision sheet.</p></div></div></div></section>
+
+        <section class="view" id="quiz" data-title="Practice Quiz"><div class="view-header"><div><p class="eyebrow">CHECK YOUR KNOWLEDGE</p><h1>Practice Quiz</h1><p class="muted">A little practice goes a long way.</p></div></div><div class="quiz-layout"><div class="panel quiz-panel"><div class="quiz-toolbar"><label for="quizTopic">Choose a topic</label><select id="quizTopic"><option>AI</option><option>Python</option><option>DBMS</option><option>Data Structures</option><option>Digital Electronics</option><option>Web Development</option></select><button class="secondary-button" id="newQuizBtn">New quiz</button></div><div id="quizContent"></div></div><aside class="panel quiz-side"><span class="stat-icon green-bg">✓</span><h3>Why quiz?</h3><p>Retrieval practice helps your brain build stronger memories than re-reading alone.</p><div class="mini-stat"><b id="quizBest">82%</b><span>Personal best</span></div><div class="mini-stat"><b>8</b><span>Quizzes completed</span></div></aside></div></section>
+
+        <section class="view" id="progress" data-title="My Progress"><div class="view-header"><div><p class="eyebrow">YOUR LEARNING JOURNEY</p><h1>My Progress</h1><p class="muted">Consistency beats intensity. See how far you’ve come.</p></div></div><div class="progress-overview"><div class="panel overall-card"><div class="ring" id="overallRing"><span><b id="overallPercent">68</b><small>overall</small></span></div><div><p class="eyebrow">OVERALL PROGRESS</p><h2>You're making great progress.</h2><p class="muted">Keep your daily rhythm going to reach your next milestone.</p></div></div><div class="panel streak-card"><span class="streak-large">♨</span><div><p class="eyebrow">CURRENT STREAK</p><h2>7 days</h2><p class="muted">Your best is 12 days. You've got this!</p></div></div></div><div class="panel activity-panel"><div class="panel-heading"><div><p class="eyebrow">THIS MONTH</p><h2>Learning activity</h2></div><span class="month-pill">September 2026⌄</span></div><div class="bar-chart" aria-label="Weekly learning activity"><div><span style="height:45%"></span><small>W1</small></div><div><span style="height:65%"></span><small>W2</small></div><div><span style="height:52%"></span><small>W3</small></div><div><span style="height:82%"></span><small>W4</small></div><div><span style="height:35%"></span><small>W5</small></div></div></div></section>
+
+        <section class="view" id="tools" data-title="Study Tools"><div class="view-header"><div><p class="eyebrow">ACTIVE RECALL STUDIO</p><h1>Study Tools</h1><p class="muted">Turn any topic into flashcards and a focused study plan.</p></div><span class="demo-badge">PERSONALISED LEARNING</span></div><div class="tools-grid"><div class="panel tool-card"><div class="tool-title"><span class="tool-icon purple-bg">◇</span><div><h2>Flashcard maker</h2><p class="muted">Create a flip-card deck from your topic.</p></div></div><label for="flashcardTopic">Topic</label><div class="input-with-button"><input id="flashcardTopic" placeholder="e.g. Operating systems"><button class="primary-button" id="makeFlashcardsBtn">Make deck</button></div><div id="flashcardArea" class="flashcard-area"><div class="empty-state compact"><span class="empty-icon">◇</span><h3>Your cards will appear here</h3><p>Use active recall instead of re-reading.</p></div></div></div><div class="panel tool-card"><div class="tool-title"><span class="tool-icon green-bg">◷</span><div><h2>Study planner</h2><p class="muted">Build a realistic plan around your time.</p></div></div><div class="planner-fields"><label>Subject<input id="planSubject" placeholder="e.g. Computer networks"></label><label>Minutes available<select id="planMinutes"><option value="30">30 minutes</option><option value="60">1 hour</option><option value="90">90 minutes</option><option value="120">2 hours</option></select></label></div><button class="primary-button full-button" id="makePlanBtn">Create study plan <span>→</span></button><div id="studyPlanArea" class="plan-area"></div></div></div></section>
+
+        <section class="view" id="chat" data-title="Ask AI"><div class="view-header"><div><p class="eyebrow">YOUR STUDY SIDEKICK</p><h1>Ask AI</h1><p class="muted">Use the built-in tutor or connect your own AI-compatible backend.</p></div><span class="demo-badge" id="aiModeBadge">DEMO MODE · PREDEFINED RESPONSES</span></div><div class="ai-settings panel"><div><b>Real AI mode</b><p>Connect a secure OpenAI-compatible proxy endpoint for live answers. Never expose a production API key in frontend code.</p></div><div class="ai-settings-controls"><label class="switch-label"><input type="checkbox" id="realAiToggle"><span class="switch"></span> Enable live mode</label><input id="aiEndpoint" placeholder="https://your-server.com/api/chat" aria-label="AI endpoint"><input id="aiModel" placeholder="Model name (optional)" aria-label="AI model"></div></div><div class="panel chat-panel"><div class="chat-messages" id="chatMessages"><div class="chat-message ai"><span class="chat-avatar">✦</span><div><b>StudyMate AI</b><p>Hi Alex! What are you working on today? Ask me about a concept, study strategy, or revision plan.</p></div></div></div><form class="chat-form" id="chatForm"><input id="chatInput" aria-label="Ask a study question" placeholder="Ask a question about your studies..."><button class="primary-button" type="submit">Send <span>↑</span></button></form><p class="chat-disclaimer">Demo mode is fully local. Live mode expects your backend to accept <code>{ messages, model }</code> and return <code>{ reply }</code>.</p></div></section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
